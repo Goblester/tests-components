@@ -1,0 +1,11 @@
+
+.superEditableSpan{
+    background: url(./../../../../assets/pencil.png) no-repeat;
+    background-size: auto 90%;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.superEditableInput{
+    margin-left: 20px;
+}
