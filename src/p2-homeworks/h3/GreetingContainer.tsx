@@ -17,7 +17,7 @@ type ValidatorType = (name: string) => undefined | string
 
 const onlyLetters = (name: string) => {
     if (!/^[A-Za-z]+$/.test(name)) {
-        return 'name should contain only letters';
+        return 'name should contain only latin letters';
     }
 }
 
