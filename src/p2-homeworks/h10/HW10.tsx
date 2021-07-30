@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {AppStateType} from './bll/store';
 import {Dispatch} from 'redux';
 import {loadingAC, LoadingActionsType} from './bll/loadingReducer';
-import loader from './../../assets/Infinity-1s-200px.svg';
+import loader from './../../assets/images/Dual Ring-1s-200px.svg';
 
 function HW10() {
     const isLoading = useSelector<AppStateType>((state: AppStateType) => state.loading.isLoading);
