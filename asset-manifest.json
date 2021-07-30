@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/test-components/static/css/main.2a0c07a0.chunk.css",
-    "main.js": "/test-components/static/js/main.dac20350.chunk.js",
-    "main.js.map": "/test-components/static/js/main.dac20350.chunk.js.map",
+    "main.js": "/test-components/static/js/main.f7b6fe65.chunk.js",
+    "main.js.map": "/test-components/static/js/main.f7b6fe65.chunk.js.map",
     "runtime-main.js": "/test-components/static/js/runtime-main.436910c0.js",
     "runtime-main.js.map": "/test-components/static/js/runtime-main.436910c0.js.map",
     "static/js/2.57598623.chunk.js": "/test-components/static/js/2.57598623.chunk.js",
@@ -10,12 +10,12 @@
     "index.html": "/test-components/index.html",
     "static/css/main.2a0c07a0.chunk.css.map": "/test-components/static/css/main.2a0c07a0.chunk.css.map",
     "static/js/2.57598623.chunk.js.LICENSE.txt": "/test-components/static/js/2.57598623.chunk.js.LICENSE.txt",
-    "static/media/Dual Ring-1s-200px.196f64f4.svg": "/test-components/static/media/Dual Ring-1s-200px.196f64f4.svg"
+    "static/media/Dual Ring-1s-200px.c76ff49a.svg": "/test-components/static/media/Dual Ring-1s-200px.c76ff49a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.436910c0.js",
     "static/js/2.57598623.chunk.js",
     "static/css/main.2a0c07a0.chunk.css",
-    "static/js/main.dac20350.chunk.js"
+    "static/js/main.f7b6fe65.chunk.js"
   ]
 }
