@@ -1,5 +1,5 @@
 import React, {ChangeEvent} from 'react';
-import {createStyles, makeStyles, Slider, Theme} from '@material-ui/core';
+import styles from './SuperDoubleRange.module.css';
 
 type SuperDoubleRangePropsType = {
     onChangeRange?: (value: number[]) => void
@@ -11,58 +11,69 @@ type SuperDoubleRangePropsType = {
 }
 
 
-
-const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
+export const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
     {
         onChangeRange, value,
         min, max, step, disabled
     }
 ) => {
-    const useStyles = makeStyles((theme: Theme) =>
-        createStyles({
-            root: {
-                width: max,
-                marginLeft: 20
-            },
-            margin: {
-                height: theme.spacing(3),
-            },
-        }),
-    );
 
-
-    const classes = useStyles();
     const handleChange = (e: ChangeEvent<{}>, newValue: number | number[]) => {
         if (typeof newValue === 'object') {
             onChangeRange && onChangeRange(newValue)
         }
     }
-    const maxValue = max?max:100;
-    const minValue = min?min:0;
 
-    const marks = [
-        {
-            value: minValue,
-            label: `${minValue}`,
-        },
-        {
-            value: maxValue,
-            label: `${maxValue}`
-        },
-    ]
+    const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+
+        const position = e.currentTarget.dataset.position;
+
+        if (position) {
+            if (value) {
+                if (position === 'left') {
+                    if (e.currentTarget.valueAsNumber <= value[1]) {
+                        handleChange(e, [Number(e.currentTarget.value), value[1]]);
+                    }
+                } else {
+                    if (e.currentTarget.valueAsNumber >= value[0]) {
+                        handleChange(e, [value[0], Number(e.currentTarget.value)]);
+                    }
+                }
+            }
+        }
+
+    }
+
+    const maxValue = max ? max : 100;
+    const minValue = min ? min : 0;
+
 
     return (
-        <div className={classes.root}>
-            <Slider value={value}
-                    onChange={handleChange}
-                    step={step}
-                    min={min}
-                    max={max}
-                    disabled={disabled}
-                    marks={marks}
-            />
+        <div className={styles.doubleRange}>
+            <span>{minValue}</span>
+            <div className={styles.rangeSlider}>
+                <input type={'range'}
+                       data-position={'left'}
+                       value={value ? value[0] : 0}
+                       min={minValue}
+                       max={maxValue}
+                       onChange={onInputChange}
+                       step={step}
+                       disabled={disabled}
+                />
+                <input type={'range'}
+                       data-position={'right'}
+                       value={value ? value[1] : 100}
+                       min={minValue}
+                       max={maxValue}
+                       onChange={onInputChange}
+                       step={step}
+                       disabled={disabled}
+                />
+
+            </div>
+            <span>{maxValue}</span>
         </div>
+
     )
 }
-
-export default SuperDoubleRange;

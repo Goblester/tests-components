@@ -20,7 +20,7 @@
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
-  "homepage": "http://Goblester.github.io/ignat-homeworks",
+  "homepage": "https://Goblester.github.io/test-components",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
